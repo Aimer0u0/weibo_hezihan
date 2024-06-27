@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <!-- 返回按钮 -->
+    <TextView
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回"
+        android:textSize="16sp"
+        android:textColor="@android:color/holo_blue_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登录账号"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- 手机号输入框 -->
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="输入手机号"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:digits="0123456789"
+        android:drawablePadding="10dp"
+        android:drawableStart="@android:drawable/ic_menu_call" />
+
+    <!-- 验证码输入框 -->
+    <EditText
+        android:id="@+id/verification_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLength="6"
+        android:hint="输入验证码"
+        android:padding="12dp"
+        android:background="@drawable/rounded_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/get_verification_code"
+        android:layout_marginTop="16dp"
+        android:inputType="number" />
+
+    <!-- 获取验证码按钮 -->
+    <Button
+        android:id="@+id/get_verification_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取验证码"
+        android:textColor="@android:color/holo_blue_dark"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- 登录按钮 -->
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="立即登录"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/verification_code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
